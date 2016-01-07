@@ -4,7 +4,7 @@ export PATH="/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
 case "$1" in
   puppet)
     yum -y install epel-release.noarch
-    yum -y install dkms
+    yum -y install dkms bzip2 gcc make perl kernel-devel
     # Update and set timezone
     yum -y update
     timedatectl set-timezone Europe/Moscow
@@ -44,7 +44,7 @@ EOF
   agent)
     # Update and set timezone
     yum -y install epel-release.noarch
-    yum -y install dkms
+    yum -y install dkms bzip2 gcc make perl kernel-devel
     yum -y update
     timedatectl set-timezone Europe/Moscow
 
