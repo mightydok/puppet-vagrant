@@ -32,7 +32,7 @@ EOF
     puppet resource service firewalld ensure=stopped enable=false
 
     # Run puppet master
-    puppet master
+    puppet resource service puppetmaster ensure=running enable=true
 
     # Change vagrant user password
     echo "vagrant:123" | chpasswd
